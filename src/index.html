@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Red Dragons Stash</title>
+        <meta name="description" content="A treasure generator for 3.5e D&D">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <script src="app.js" async defer></script>
+        <div>
+            <!-- area to input the parameters for generating loot -->
+            <form id="lootParam">
+            <p>Select Party Level: <select name="Party Level" id="getObj">
+                <option value=level1>level1</option>
+                <option value=level2>level2</option>
+            </select></p>
+            <!-- I believe this line to be the error as "Cannot read properties of undefined (reading 'length')" refers to the obj created here.
+            I believe it is not actually selecting an option from the selection bar -->
+            <script> var select = document.getElementById('getObj'); obj = select.options[select.selectedIndex].value </script>
+            <p>Input number of treasure rolls:</p>
+            <p><input id="getNum" type="number" value=1></p>
+            <script> num = document.getElementById('getNum').value </script>
+            <!-- Button that when clicked generates the treasure -->
+            <p><input type="button"  onclick="buildHorde(obj,num);" value="Generate Treasure!"></p>
+            </form>
+            <!-- area that displays generated treasure -->
+            <div id="output">
+            <h3>Coins:</h3>
+            <p id="coins"></p>
+            <h3>Items:</h3>
+            <p id="items"></p>
+            <h3>Goods:</h3>
+            <p id="goods"></p>
+            </div>
+        </div> 
+    </body>
+</html>
