@@ -1,2 +1,4 @@
 When an item is hovered over, take an item from the stone soup dungeon crawl sprite pack that represents it and display it as a small window that sticks to the mouse as 
 long as the mouse is hovering over the item.
+
+Alot coins with similar types, also true for duplicate items and goods.

@@ -18,17 +18,13 @@
             <!-- area to input the parameters for generating loot -->
             <form id="lootParam">
             <p>Select Party Level: <select name="Party Level" id="getObj">
-                <option value=level1>level1</option>
+                <option value=level1><var>level1</var></option>
                 <option value=level2>level2</option>
             </select></p>
-            <!-- I believe this line to be the error as "Cannot read properties of undefined (reading 'length')" refers to the obj created here.
-            I believe it is not actually selecting an option from the selection bar -->
-            <script> var select = document.getElementById('getObj'); obj = select.options[select.selectedIndex].value </script>
             <p>Input number of treasure rolls:</p>
             <p><input id="getNum" type="number" value=1></p>
-            <script> num = document.getElementById('getNum').value; console.log(num) </script>
             <!-- Button that when clicked generates the treasure -->
-            <p><input type="button"  onclick="buildHorde(obj,num);" value="Generate Treasure!"></p>
+            <p><input id="genButton" type="button" onclick="setValue()"; value="Generate Treasure!"></p>
             </form>
             <!-- area that displays generated treasure -->
             <div id="output">
